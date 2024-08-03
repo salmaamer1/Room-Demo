@@ -99,7 +99,7 @@ class SubscriberViewModel(private val repository: SubscriberRepository):ViewMode
     fun ClearAll():Job=
          viewModelScope.launch {
         val noofROwsDleted= repository.deleteAll()
-             if (noofROwsDleted>0){
+        if (noofROwsDleted>0){
          statusMessage.value = Event(" $noofROwsDleted  Subscribers Deleted sucessfully")
         }
       else {
